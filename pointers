@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath> // Required for abs()
+
+void update(int *a, int *b) {
+    int sum = *a + *b;
+    int dif = std::abs(*a - *b); // Use std::abs for C++
+
+    *a = sum;
+    *b = dif;
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b; // Assign the addresses to the pointers
+
+    std::cin >> a >> b; // Read input from stdin
+    update(pa, pb); // Pass the pointers (addresses) to the function
+    std::cout << a << std::endl; // Print the updated values
+    std::cout << b << std::endl;
+
+    return 0;
+}
